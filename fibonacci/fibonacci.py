@@ -22,13 +22,14 @@ lib = ctypes.CDLL(_LIB_PATH)
 # return raw pointer as void* so ctypes doesn't attempt to manage/free it
 lib.fib_naive_str.restype = ctypes.c_void_p
 lib.fib_linear_str.restype = ctypes.c_void_p
+lib.fib_gmp_str.restype = ctypes.c_void_p
 
 # bind free_str
 lib.free_str.argtypes = (ctypes.c_void_p,)
 lib.free_str.restype = None
 
 
-def _call(func, n: int) -> int:
+def _call(func, n: int) -> str:
     raw_ptr = func(n)
     if not raw_ptr:
         raise RuntimeError("C function returned NULL")
@@ -39,12 +40,16 @@ def _call(func, n: int) -> int:
     # free vie free_str so the same allocator deallocates it
     lib.free_str(raw_ptr)
 
-    return int(py_str)
+    return py_str
 
 
-def fib_naive(n: int) -> int:
+def fib_naive(n: int) -> str:
     return _call(lib.fib_naive_str, n)
 
 
-def fib_linear(n: int) -> int:
+def fib_linear(n: int) -> str:
     return _call(lib.fib_linear_str, n)
+
+
+def fib_gmp(n: int) -> str:
+    return _call(lib.fib_gmp_str, n)

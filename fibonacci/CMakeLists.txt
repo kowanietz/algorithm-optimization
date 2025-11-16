@@ -14,7 +14,10 @@ add_library(fib SHARED ${FIB_SOURCES}
         src/bigint_utils.h
         src/bigint_utils.c
         src/fibonacci.h
-        src/fibonacci.c)
+        src/fibonacci.c
+        src/naive.c
+        src/linear.c
+        src/gmp.c)
 
 set_target_properties(fib PROPERTIES
         OUTPUT_NAME "fib"
