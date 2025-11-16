@@ -1,1 +1,1 @@
-from .fibonacci import fib_naive, fib_linear
+from .fibonacci import fib_naive, fib_linear, fib_gmp

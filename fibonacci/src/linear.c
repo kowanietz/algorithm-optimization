@@ -1,7 +1,7 @@
 #include <gmp.h>
 #include "fibonacci.h"
 
-void fib_linear(mpz_t result, const int n) {
+void fib_linear(mpz_t result, int n) {
     if (n < 2) {
         mpz_set_ui(result, n);
         return;
@@ -11,7 +11,7 @@ void fib_linear(mpz_t result, const int n) {
     mpz_init_set_ui(f0, 0);
     mpz_init_set_ui(f1, 1);
 
-    for (unsigned long i = 2; i <= n; i++) {
+    while (n-- > 1) {
         mpz_add(f0, f0, f1);
         mpz_swap(f0, f1);
     }
