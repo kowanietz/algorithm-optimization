@@ -17,6 +17,7 @@ add_library(fib SHARED ${FIB_SOURCES}
         src/fibonacci.c
         src/naive.c
         src/linear.c
+        src/matmul_naive.c
         src/gmp.c)
 
 set_target_properties(fib PROPERTIES

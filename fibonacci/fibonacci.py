@@ -10,11 +10,7 @@ else:
     LIB_NAME = "libfib.so"
 
 _LIB_PATH = os.path.join(
-    os.path.dirname(__file__),
-    "..",
-    "build",
-    "fibonacci",
-    LIB_NAME
+    os.path.dirname(__file__), "..", "build", "fibonacci", LIB_NAME
 )
 
 lib = ctypes.CDLL(_LIB_PATH)
@@ -22,6 +18,7 @@ lib = ctypes.CDLL(_LIB_PATH)
 # return raw pointer as void* so ctypes doesn't attempt to manage/free it
 lib.fib_naive_str.restype = ctypes.c_void_p
 lib.fib_linear_str.restype = ctypes.c_void_p
+lib.fib_matmul_naive_str.restype = ctypes.c_void_p
 lib.fib_gmp_str.restype = ctypes.c_void_p
 
 # bind free_str
@@ -49,6 +46,10 @@ def fib_naive(n: int) -> str:
 
 def fib_linear(n: int) -> str:
     return _call(lib.fib_linear_str, n)
+
+
+def fib_matmul_naive(n: int) -> str:
+    return _call(lib.fib_matmul_naive_str, n)
 
 
 def fib_gmp(n: int) -> str:
