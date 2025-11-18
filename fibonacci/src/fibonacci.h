@@ -8,6 +8,8 @@ void fib_linear(mpz_t result, int n);
 
 void fib_matmul_naive(mpz_t result, int n);
 
+void fib_matmul_fastexp(mpz_t result, int n);
+
 void fib_gmp(mpz_t result, int n);
 
 
@@ -17,6 +19,8 @@ const char *fib_naive_str(int n);
 const char *fib_linear_str(int n);
 
 const char *fib_matmul_naive_str(int n);
+
+const char *fib_matmul_fastexp_str(int n);
 
 const char *fib_gmp_str(int n);
 

@@ -16,4 +16,5 @@
 MAKE_FIB_STR_WRAPPER(fib_naive)
 MAKE_FIB_STR_WRAPPER(fib_linear)
 MAKE_FIB_STR_WRAPPER(fib_matmul_naive)
+MAKE_FIB_STR_WRAPPER(fib_matmul_fastexp)
 MAKE_FIB_STR_WRAPPER(fib_gmp)
