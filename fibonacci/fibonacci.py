@@ -20,6 +20,8 @@ lib.fib_naive_str.restype = ctypes.c_void_p
 lib.fib_linear_str.restype = ctypes.c_void_p
 lib.fib_matmul_naive_str.restype = ctypes.c_void_p
 lib.fib_matmul_fastexp_str.restype = ctypes.c_void_p
+lib.fib_matmul_3var_str.restype = ctypes.c_void_p
+lib.fib_matmul_2var_str.restype = ctypes.c_void_p
 lib.fib_gmp_str.restype = ctypes.c_void_p
 
 # bind free_str
@@ -55,6 +57,14 @@ def fib_matmul_naive(n: int) -> str:
 
 def fib_matmul_fastexp(n: int) -> str:
     return _call(lib.fib_matmul_fastexp_str, n)
+
+
+def fib_matmul_3var(n: int) -> str:
+    return _call(lib.fib_matmul_3var_str, n)
+
+
+def fib_matmul_2var(n: int) -> str:
+    return _call(lib.fib_matmul_2var_str, n)
 
 
 def fib_gmp(n: int) -> str:

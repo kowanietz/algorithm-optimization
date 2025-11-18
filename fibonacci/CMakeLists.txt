@@ -19,6 +19,8 @@ add_library(fib SHARED ${FIB_SOURCES}
         src/linear.c
         src/matmul_naive.c
         src/matmul_fastexp.c
+        src/matmul_3var.c
+        src/matmul_2var.c
         src/gmp.c
 )
 
