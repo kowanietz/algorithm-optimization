@@ -68,7 +68,7 @@ Fibonacci numbers can be computed using matrix exponentiation:
 ^n
 =
 \begin{bmatrix}
-F_{n-1} & F_n \\ F_n & F_{n-1}
+F_{n-1} & F_n \\ F_n & F_{n+1}
 \end{bmatrix}
 ```
 
