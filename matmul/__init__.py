@@ -1,3 +1,3 @@
-from .matmul import naive
+from .matmul import naive, cblas
 
-__all__ = ["naive"]
+__all__ = ["naive", "cblas"]
