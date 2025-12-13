@@ -28,20 +28,41 @@ lib.trial_division_sqrt_odd.argtypes = [
     ctypes.c_uint32,
 ]
 
+lib.trial_division_known_divisors.restype = ctypes.c_uint32
+lib.trial_division_known_divisors.argtypes = [
+    ctypes.c_uint32,
+]
+
+lib.sieve_basic.restype = ctypes.c_uint32
+lib.sieve_basic.argtypes = [
+    ctypes.c_uint32,
+]
+
+lib.sieve_p2.restype = ctypes.c_uint32
+lib.sieve_p2.argtypes = [
+    ctypes.c_uint32,
+]
+
 
 def trial_division_naive(n: int) -> int:
-    prime = lib.trial_division_naive(n)
-
-    return prime
+    return lib.trial_division_naive(n)
 
 
 def trial_division_sqrt(n: int) -> int:
-    prime = lib.trial_division_sqrt(n)
-
-    return prime
+    return lib.trial_division_sqrt(n)
 
 
 def trial_division_sqrt_odd(n: int) -> int:
-    prime = lib.trial_division_sqrt_odd(n)
+    return lib.trial_division_sqrt_odd(n)
 
-    return prime
+
+def trial_division_known_divisors(n: int) -> int:
+    return lib.trial_division_known_divisors(n)
+
+
+def sieve_basic(n: int) -> int:
+    return lib.sieve_basic(n)
+
+
+def sieve_p2(n: int) -> int:
+    return lib.sieve_p2(n)
