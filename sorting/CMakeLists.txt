@@ -8,6 +8,7 @@ file(GLOB SORTING_SOURCES "src/*.cpp")
 
 add_library(sorting SHARED ${SORTING_SOURCES}
         src/bubble_sort_naive.cpp
+        src/bubble_sort_optimized.cpp
 )
 
 set_target_properties(sorting PROPERTIES OUTPUT_NAME "sorting")
