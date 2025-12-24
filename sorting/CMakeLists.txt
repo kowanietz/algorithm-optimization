@@ -10,6 +10,7 @@ add_library(sorting SHARED ${SORTING_SOURCES}
         src/bubble_sort_naive.cpp
         src/bubble_sort_optimized.cpp
         src/insertion_sort.cpp
+        src/selection_sort.cpp
 )
 
 set_target_properties(sorting PROPERTIES OUTPUT_NAME "sorting")

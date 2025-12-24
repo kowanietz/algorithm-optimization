@@ -31,6 +31,12 @@ lib.insertion_sort.argtypes = [
     ctypes.c_uint32,
 ]
 
+lib.selection_sort.restype = None
+lib.selection_sort.argtypes = [
+    ctypes.POINTER(ctypes.c_int32),
+    ctypes.c_uint32,
+]
+
 
 def bubble_sort_naive(arr: list[int]) -> list[int]:
     n = len(arr)
@@ -53,4 +59,12 @@ def insertion_sort(arr: list[int]) -> list[int]:
     arr_copy = arr.copy()
     c_arr = (ctypes.c_int32 * n)(*arr_copy)
     lib.insertion_sort(c_arr, n)
+    return list(c_arr)
+
+
+def selection_sort(arr: list[int]) -> list[int]:
+    n = len(arr)
+    arr_copy = arr.copy()
+    c_arr = (ctypes.c_int32 * n)(*arr_copy)
+    lib.selection_sort(c_arr, n)
     return list(c_arr)
