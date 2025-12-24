@@ -1,7 +1,7 @@
 #include <span>
 
-namespace {
-    void insertion_sort_internal(std::span<int32_t> arr) {
+namespace internal {
+    void insertion_sort(std::span<int32_t> arr) {
         const size_t n = arr.size();
 
         for (size_t i = 1; i < n; ++i) {
@@ -20,6 +20,6 @@ namespace {
 
 extern "C" {
 void insertion_sort(int32_t *arr, const uint32_t n) {
-    insertion_sort_internal(std::span<int32_t>(arr, n));
+    internal::insertion_sort(std::span<int32_t>(arr, n));
 }
 }

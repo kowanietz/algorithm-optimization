@@ -1,7 +1,7 @@
 #include <span>
 
-namespace {
-    void bubble_sort(std::span<int32_t> arr) {
+namespace internal {
+    void bubble_sort_naive(std::span<int32_t> arr) {
         const size_t n = arr.size();
 
         for (size_t i = 0; i < n - 1; i++) {
@@ -16,6 +16,6 @@ namespace {
 
 extern "C" {
 void bubble_sort_naive(int32_t *arr, const uint32_t n) {
-    bubble_sort(std::span<int32_t>(arr, n));
+    internal::bubble_sort_naive(std::span<int32_t>(arr, n));
 }
 }
