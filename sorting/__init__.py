@@ -1,3 +1,3 @@
-from .sorting import bubble_sort_naive, bubble_sort_optimized
+from .sorting import bubble_sort_naive, bubble_sort_optimized, insertion_sort
 
-__all__ = ["bubble_sort_naive", "bubble_sort_optimized"]
+__all__ = ["bubble_sort_naive", "bubble_sort_optimized", "insertion_sort"]
