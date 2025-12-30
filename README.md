@@ -1,8 +1,10 @@
-# Algorithm optimization in C
+# Algorithm optimization in C/C++
 
 [Fibonacci Number Generation](#fibonacci-number-generation)
 
 [Prime Number Generation](#prime-number-generation)
+
+[Sorting Algorithms](#sorting-algorithms)
 
 ## Fibonacci Number Generation
 
@@ -255,11 +257,23 @@ p \ge 2, \\
 | Algorithm                          | Time Complexity (primality test) | Time Complexity (generate primes ≤ n) |
 |------------------------------------|:--------------------------------:|:-------------------------------------:|
 | Trial Division (Naive)             |              $O(n)$              |                   -                   |
-| Trial Division (Square Root)       |           $O(\sqrt{n})$          |                   -                   |
-| Trial Division (Square Root, Odds) |           $O(\sqrt{n})$          |                   -                   |
-| Trial Division (Known Divisors)    |      $O(\frac{\sqrt{n}}{ln n})$  |                   -                   |
-| Sieve of Eratosthenes              |                -                 |           $O(n \log \log n)$          |
-| Sieve of Eratosthenes ($p^2$)      |                -                 |           $O(n \log \log n)$          |
+| Trial Division (Square Root)       |          $O(\sqrt{n})$           |                   -                   |
+| Trial Division (Square Root, Odds) |          $O(\sqrt{n})$           |                   -                   |
+| Trial Division (Known Divisors)    |    $O(\frac{\sqrt{n}}{ln n})$    |                   -                   |
+| Sieve of Eratosthenes              |                -                 |          $O(n \log \log n)$           |
+| Sieve of Eratosthenes ($p^2$)      |                -                 |          $O(n \log \log n)$           |
+
+# Sorting Algorithms
+
+### Algorithms
+
+| Algorithm               | Time Complexity |
+|-------------------------|:---------------:|
+| Bubble Sort (Naive)     |    $O(n^2)$     |
+| Bubble Sort (Optimized) |    $O(n^2)$     |
+| Insertion Sort          |    $O(n^2)$     |
+| Selection Sort          |    $O(n^2)$     |
+| Merge Sort              |  $O(n \log n)$  |
 
 # Usage
 
